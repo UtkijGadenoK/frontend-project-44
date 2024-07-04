@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/UtkijGadenoK/frontend-project-44#readme",
   "bin": {
-    "code": "bin/brain-games.js"
+  "brain-games": "bin/brain-games.js"
   }
 }
