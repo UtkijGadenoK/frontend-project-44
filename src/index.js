@@ -17,7 +17,7 @@ export const runGame = (gameLogic, name) => {
   
   let correct = 0;
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     const round = gameLogic.generateRound();
     const question = round.question;
     const correctAnswer = round.correctAnswer;
