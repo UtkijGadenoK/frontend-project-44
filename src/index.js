@@ -14,8 +14,6 @@ export const greetUser = () => {
 // Функция для запуска игры
 export const runGame = (gameLogic, name) => {
   console.log(gameLogic.description);
-  
-  let correct = 0;
 
   for (let i = 0; i < 3; i += 1) {
     const round = gameLogic.generateRound();
@@ -26,7 +24,6 @@ export const runGame = (gameLogic, name) => {
     
     if (answer === correctAnswer) {
       console.log('Correct!');
-      correct += 1;
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
