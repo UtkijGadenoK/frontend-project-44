@@ -9,3 +9,6 @@
 
 ### Asciinema brain-calc
 <a href="https://asciinema.org/a/YREqITCZnqpKVC2UDQWb2Mz29" target="_blank"><img src="https://asciinema.org/a/YREqITCZnqpKVC2UDQWb2Mz29.svg" /></a>
+
+### Asciinema brain-calc + brain-even
+<a href="https://asciinema.org/a/KJ4hZhunM9mhUVf3x8UXaVIK6" target="_blank"><img src="https://asciinema.org/a/KJ4hZhunM9mhUVf3x8UXaVIK6.svg" /></a
