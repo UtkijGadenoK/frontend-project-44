@@ -21,3 +21,6 @@
 
 ### Asciinema brain-prime
 <a href="https://asciinema.org/a/Tv3zfQh7kyFZbLEuTyfIFKHcV" target="_blank"><img src="https://asciinema.org/a/Tv3zfQh7kyFZbLEuTyfIFKHcV.svg" /></a>
+
+### Asciinema brain-games: correct answers
+<a href="https://asciinema.org/a/feeVM6DxhxLM3KTLLS94Kkuoh" target="_blank"><img src="https://asciinema.org/a/feeVM6DxhxLM3KTLLS94Kkuoh.svg" /></a>
