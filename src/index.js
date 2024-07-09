@@ -3,11 +3,11 @@ import readlineSync from 'readline-sync';
 // Функция для приветствия пользователя и получения его имени
 export const greetUser = () => {
   console.log('Welcome to the Brain Games!');
-  
+
   const name = readlineSync.question('May I have your name? ');
-  
+
   console.log(`Hello, ${name}!`);
-  
+
   return name;
 };
 
@@ -19,9 +19,9 @@ export const runGame = (gameLogic, name) => {
     const round = gameLogic.generateRound();
     const question = round.question;
     const correctAnswer = round.correctAnswer;
-    
+  
     const answer = readlineSync.question(`Question: ${question}\nYour answer: `);
-    
+  
     if (answer === correctAnswer) {
       console.log('Correct!');
     } else {
@@ -34,5 +34,5 @@ export const runGame = (gameLogic, name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-//Функция генерации случайного числа
+// Функция генерации случайного числа
 export const generateRandomNumber = () => Math.floor(Math.random() * 100) + 1;

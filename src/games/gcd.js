@@ -11,8 +11,8 @@ const generateRound = () => {
   let num1 = generateRandomNumber();
   let num2 = generateRandomNumber();
   let gcdValue = gcd(num1, num2);
-  
-// Если НОД равен 1, генерируем новые пары
+
+  // Если НОД равен 1, генерируем новые пары
   while (gcdValue < 2) {
     num1 = generateRandomNumber();
     num2 = generateRandomNumber();
