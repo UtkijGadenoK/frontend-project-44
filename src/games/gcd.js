@@ -1,4 +1,4 @@
-const generateRandomNumber = () => Math.floor(Math.random() * 100) + 1;
+import { generateRandomNumber } from '../index.js';
 
 const gcd = (a, b) => {
   if (b === 0) {

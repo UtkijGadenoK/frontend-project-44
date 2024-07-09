@@ -1,4 +1,4 @@
-const generateRandomNumber = () => Math.floor(Math.random() * 100) + 1;
+import { generateRandomNumber } from '../index.js';
 
 const isEven = (number) => number % 2 === 0;
 
