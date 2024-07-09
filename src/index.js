@@ -33,3 +33,6 @@ export const runGame = (gameLogic, name) => {
 
   console.log(`Congratulations, ${name}!`);
 };
+
+//Функция генерации случайного числа
+export const generateRandomNumber = () => Math.floor(Math.random() * 100) + 1;
