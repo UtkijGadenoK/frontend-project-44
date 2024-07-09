@@ -11,16 +11,16 @@ const isPrime = (num) => {
 };
 
 const generateRound = () => {
-    const number = generateRandomNumber();
-    const question = number.toString();
-    const correctAnswer = isPrime(number) ? 'yes' : 'no';
-    return {
-      question,
-      correctAnswer,
-    };
+  const number = generateRandomNumber();
+  const question = number.toString();
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+  return {
+    question,
+    correctAnswer,
   };
-  
-  export default {
-    description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
-    generateRound,
+};
+
+export default {
+  description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
+  generateRound,
 };

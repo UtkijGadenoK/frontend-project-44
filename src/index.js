@@ -17,11 +17,10 @@ export const runGame = (gameLogic, name) => {
 
   for (let i = 0; i < 3; i += 1) {
     const round = gameLogic.generateRound();
-    const question = round.question;
-    const correctAnswer = round.correctAnswer;
-  
+    const { question, correctAnswer } = round;
+
     const answer = readlineSync.question(`Question: ${question}\nYour answer: `);
-  
+
     if (answer === correctAnswer) {
       console.log('Correct!');
     } else {
