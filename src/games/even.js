@@ -1,18 +1,18 @@
-import { generateRandomNumber } from '../index.js';
+import { generateRandomNumber, runGame } from '../index.js';
 
-const isEven = (number) => number % 2 === 0;
+const isEven = (num) => num % 2 === 0;
 
 const generateRound = () => {
-  const number = generateRandomNumber();
-  const question = number.toString();
-  const correctAnswer = isEven(number) ? 'yes' : 'no';
+  const question = generateRandomNumber();
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
   return {
-    question,
+    question: question.toString(),
     correctAnswer,
   };
 };
 
-export default {
-  description: 'Answer "yes" if the number is even, otherwise answer "no".',
-  generateRound,
+const runEvenGame = () => {
+  runGame(generateRound);
 };
+
+export default runEvenGame;

@@ -1,6 +1,5 @@
 import _ from 'lodash';
-
-import { generateRandomNumber } from '../index.js';
+import { generateRandomNumber, runGame } from '../index.js';
 
 const operations = ['+', '-', '*'];
 
@@ -29,7 +28,8 @@ const generateRound = () => {
   };
 };
 
-export default {
-  description: 'What is the result of the expression?',
-  generateRound,
+const runCalcGame = () => {
+  runGame(generateRound);
 };
+
+export default runCalcGame;

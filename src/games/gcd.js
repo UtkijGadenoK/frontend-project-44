@@ -1,4 +1,4 @@
-import { generateRandomNumber } from '../index.js';
+import { generateRandomNumber, runGame } from '../index.js';
 
 const gcd = (a, b) => {
   if (b === 0) {
@@ -27,7 +27,8 @@ const generateRound = () => {
   };
 };
 
-export default {
-  description: 'Find the greatest common divisor of given numbers.',
-  generateRound,
+const runGcdGame = () => {
+  runGame(generateRound);
 };
+
+export default runGcdGame;
