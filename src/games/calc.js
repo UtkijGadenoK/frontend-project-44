@@ -1,12 +1,11 @@
-import { generateRandomNumber } from '../index.js';
-import runGame from '../index.js';
+import { generateRandomNumber, runGame } from '../index.js';
 
 const generateRound = () => {
   const num1 = generateRandomNumber();
   const num2 = generateRandomNumber();
   const operations = ['+', '-', '*'];
   const operation = operations[generateRandomNumber(0, operations.length - 1)];
-  
+
   let correctAnswer;
   switch (operation) {
     case '+':
