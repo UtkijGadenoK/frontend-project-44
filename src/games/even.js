@@ -12,9 +12,6 @@ const evenGame = {
   generateRound,
 };
 
-const runEvenGame = () => {
-  const userName = readlineSync.question('May I have your name? ');
-  runGame(evenGame, userName);
-};
+const runEvenGame = () => runGame(evenGame);
 
 export default runEvenGame;

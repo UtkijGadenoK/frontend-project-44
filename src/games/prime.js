@@ -1,24 +1,28 @@
 import { generateRandomNumber, runGame } from '../index.js';
 
 const isPrime = (num) => {
-  if (num <= 1) return false;
+  if (num < 2) {
+    return false;
+  }
   for (let i = 2; i <= Math.sqrt(num); i += 1) {
-    if (num % i === 0) return false;
+    if (num % i === 0) {
+      return false;
+    }
   }
   return true;
 };
 
 const generateRound = () => {
-  const question = generateRandomNumber();
+  const question = generateRandomNumber(1, 100);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
-  return {
-    question: question.toString(),
-    correctAnswer,
-  };
+  return { question, correctAnswer };
 };
 
-const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const primeGame = {
+  description: 'Answer "yes" if given number is prime. Otherwise answer "no".',
+  generateRound,
+};
 
-const runPrimeGame = () => runGame(generateRound, gameDescription);
+const runPrimeGame = () => runGame(primeGame);
 
 export default runPrimeGame;

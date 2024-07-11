@@ -8,18 +8,19 @@ const gcd = (a, b) => {
 };
 
 const generateRound = () => {
-  const num1 = generateRandomNumber();
-  const num2 = generateRandomNumber();
-  const question = `${num1} ${num2}`;
-  const correctAnswer = gcd(num1, num2).toString();
-  return {
-    question,
-    correctAnswer,
-  };
+  const a = generateRandomNumber(1, 100);
+  const b = generateRandomNumber(1, 100);
+  const question = `${a} ${b}`;
+  const correctAnswer = String(gcd(a, b));
+
+  return { question, correctAnswer };
 };
 
-const gameDescription = 'Find the greatest common divisor of given numbers.';
+const gcdGame = {
+  description: 'Find the greatest common divisor of given numbers.',
+  generateRound,
+};
 
-const runGcdGame = () => runGame(generateRound, gameDescription);
+const runGcdGame = () => runGame(gcdGame);
 
 export default runGcdGame;

@@ -25,8 +25,11 @@ const generateRound = () => {
   };
 };
 
-const gameDescription = 'What number is missing in the progression?';
+const progressionGame = {
+  description: 'What number is missing in the progression?',
+  generateRound,
+};
 
-const runProgressionGame = () => runGame(generateRound, gameDescription);
+const runProgressionGame = () => runGame(progressionGame);
 
 export default runProgressionGame;

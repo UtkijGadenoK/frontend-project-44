@@ -1,35 +1,36 @@
 import { generateRandomNumber, runGame } from '../index.js';
 
-const generateRound = () => {
-  const num1 = generateRandomNumber();
-  const num2 = generateRandomNumber();
-  const operations = ['+', '-', '*'];
-  const operation = operations[generateRandomNumber(0, operations.length - 1)];
+const operators = ['+', '-', '*'];
 
-  let correctAnswer;
-  switch (operation) {
+const calculate = (a, b, operator) => {
+  switch (operator) {
     case '+':
-      correctAnswer = num1 + num2;
-      break;
+      return a + b;
     case '-':
-      correctAnswer = num1 - num2;
-      break;
+      return a - b;
     case '*':
-      correctAnswer = num1 * num2;
-      break;
+      return a * b;
     default:
-      throw new Error(`Unknown operation: ${operation}`);
+      throw new Error(`Unknown operator: '${operator}'`);
   }
-
-  const question = `${num1} ${operation} ${num2}`;
-  return {
-    question,
-    correctAnswer: correctAnswer.toString(),
-  };
 };
 
-const gameDescription = 'What is the result of the expression?';
+const generateRound = () => {
+  const a = generateRandomNumber(1, 20);
+  const b = generateRandomNumber(1, 20);
+  const operator = operators[generateRandomNumber(0, operators.length - 1)];
 
-const runCalcGame = () => runGame(generateRound, gameDescription);
+  const question = `${a} ${operator} ${b}`;
+  const correctAnswer = String(calculate(a, b, operator));
+
+  return { question, correctAnswer };
+};
+
+const calcGame = {
+  description: 'What is the result of the expression?',
+  generateRound,
+};
+
+const runCalcGame = () => runGame(calcGame);
 
 export default runCalcGame;
