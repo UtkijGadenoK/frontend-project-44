@@ -1,11 +1,7 @@
 import readlineSync from 'readline-sync';
 
 export const generateRandomNumber = (min = 1, max = 100) => Math.floor(
-<<<<<<< HEAD
-  Math.random() * (max - min + 1)
-=======
   Math.random() * (max - min + 1),
->>>>>>> 23ca4dc (Refactor game initialization and remove redundant function calls.)
 ) + min;
 
 export const runGame = (game) => {
