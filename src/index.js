@@ -1,37 +1,25 @@
 import readlineSync from 'readline-sync';
 
-// Функция для приветствия пользователя и получения его имени
-export const greetUser = () => {
+export const generateRandomNumber = (min = 1, max = 100) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+const runGame = (generateRound, gameDescription) => {
   console.log('Welcome to the Brain Games!');
-
-  const name = readlineSync.question('May I have your name? ');
-
-  console.log(`Hello, ${name}!`);
-
-  return name;
-};
-
-// Функция для запуска игры
-export const runGame = (gameLogic, name) => {
-  console.log(gameLogic.description);
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  console.log(gameDescription);
 
   for (let i = 0; i < 3; i += 1) {
-    const round = gameLogic.generateRound();
-    const { question, correctAnswer } = round;
+    const { question, correctAnswer } = generateRound();
+    const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
 
-    const answer = readlineSync.question(`Question: ${question}\nYour answer: `);
-
-    if (answer === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
+    if (userAnswer !== correctAnswer) {
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
+    console.log('Correct!');
   }
-
-  console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
-// Функция генерации случайного числа
-export const generateRandomNumber = () => Math.floor(Math.random() * 100) + 1;
+export default runGame;

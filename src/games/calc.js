@@ -1,13 +1,12 @@
-import _ from 'lodash';
-import { generateRandomNumber, runGame } from '../index.js';
-
-const operations = ['+', '-', '*'];
+import { generateRandomNumber } from '../index.js';
+import runGame from '../index.js';
 
 const generateRound = () => {
   const num1 = generateRandomNumber();
   const num2 = generateRandomNumber();
-  const operation = _.sample(operations);
-  const question = `${num1} ${operation} ${num2}`;
+  const operations = ['+', '-', '*'];
+  const operation = operations[generateRandomNumber(0, operations.length - 1)];
+  
   let correctAnswer;
   switch (operation) {
     case '+':
@@ -20,16 +19,18 @@ const generateRound = () => {
       correctAnswer = num1 * num2;
       break;
     default:
-      throw new Error(`Unsupported operation: ${operation}`);
+      throw new Error(`Unknown operation: ${operation}`);
   }
+
+  const question = `${num1} ${operation} ${num2}`;
   return {
     question,
     correctAnswer: correctAnswer.toString(),
   };
 };
 
-const runCalcGame = () => {
-  runGame(generateRound);
-};
+const gameDescription = 'What is the result of the expression?';
+
+const runCalcGame = () => runGame(generateRound, gameDescription);
 
 export default runCalcGame;

@@ -1,5 +1,5 @@
 import { generateRandomNumber } from '../index.js';
-import { greetUser, runGame } from '../index.js';
+import runGame from '../index.js';
 
 const generateProgression = (start, step, length) => {
   const progression = [];
@@ -26,14 +26,8 @@ const generateRound = () => {
   };
 };
 
-const progressionGame = {
-  description: 'What number is missing in the progression?',
-  generateRound,
-};
+const gameDescription = 'What number is missing in the progression?';
 
-const runProgressionGame = () => {
-  const userName = greetUser();
-  runGame(progressionGame, userName);
-};
+const runProgressionGame = () => runGame(generateRound, gameDescription);
 
 export default runProgressionGame;
