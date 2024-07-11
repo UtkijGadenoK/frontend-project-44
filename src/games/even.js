@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import { generateRandomNumber, runGame } from '../index.js';
 
 const generateRound = () => {
