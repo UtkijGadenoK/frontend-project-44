@@ -1,18 +1,19 @@
 import { generateRandomNumber, runGame } from '../index.js';
 
-const isEven = (num) => num % 2 === 0;
-
 const generateRound = () => {
-  const question = generateRandomNumber();
-  const correctAnswer = isEven(question) ? 'yes' : 'no';
-  return {
-    question: question.toString(),
-    correctAnswer,
-  };
+  const question = generateRandomNumber(1, 100);
+  const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
+  return { question, correctAnswer };
 };
 
-const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
+const evenGame = {
+  description: 'Answer "yes" if the number is even, otherwise answer "no".',
+  generateRound,
+};
 
-const runEvenGame = () => runGame(generateRound, gameDescription);
+const runEvenGame = () => {
+  const userName = readlineSync.question('May I have your name? ');
+  runGame(evenGame, userName);
+};
 
 export default runEvenGame;
