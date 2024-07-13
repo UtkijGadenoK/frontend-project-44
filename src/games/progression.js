@@ -10,12 +10,12 @@ const generateProgression = (start, step, length) => {
 };
 
 const generateRound = () => {
-  const progressionLength = Math.floor(Math.random() * 6) + 5;
-  const start = generateRandomNumber(); // Начальное число прогрессии
-  const step = Math.floor(Math.random() * 5) + 1; // Шаг прогрессии
+  const progressionLength = generateRandomNumber(5, 10); // Использование функции генерации чисел
+  const start = generateRandomNumber(); // Использование функции генерации чисел
+  const step = generateRandomNumber(1, 5); // Использование функции генерации чисел
   const progression = generateProgression(start, step, progressionLength);
 
-  const hiddenIndex = Math.floor(Math.random() * progressionLength);
+  const hiddenIndex = generateRandomNumber(0, progressionLength - 1);
   const correctAnswer = progression[hiddenIndex].toString();
   progression[hiddenIndex] = '..';
 
